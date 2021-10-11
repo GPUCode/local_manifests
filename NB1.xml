@@ -18,6 +18,13 @@
   <project path="hardware/qcom-caf/msm8998/display" name="hardware_qcom-caf_msm8998_display" revision="gl/lineage-18.1-caf-msm8998" remote="githubgl" />
   <project path="hardware/qcom-caf/msm8998/media" name="hardware_qcom-caf_msm8998_media" revision="lineage-18.1-caf-msm8998" remote="githubgl" />
 
+  <!-- ANT+ projects -->
+  <project path="external/ant-wireless/ant_client" name="LineageOS/android_external_ant-wireless_ant_client" remote="github" />
+  <project path="external/ant-wireless/ant_native" name="LineageOS/android_external_ant-wireless_ant_native" remote="github" />
+  <project path="external/ant-wireless/ant_service" name="LineageOS/android_external_ant-wireless_ant_service" remote="github" />
+  <project path="external/ant-wireless/antradio-library" name="LineageOS/android_external_ant-wireless_antradio-library" remote="github" />
+  <project path="external/ant-wireless/hidl" name="LineageOS/android_external_ant-wireless_hidl" remote="github" />
+
   <!-- LineageOS tools -->
   <project path="prebuilts/tools-lineage" name="android_prebuilts_tools-lineage" revision="lineage-18.1" remote="githubgl" />
 </manifest>
