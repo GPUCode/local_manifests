@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="githubgl"
+           fetch="https://github.com/roberto-sartori-gl"
+           revision="refs/heads/gl" />
+
+  <!-- Validated with AOSP revision: android-11.0.0_r43 -->
+  <!-- Added projects for NB1 -->
+  <project path="device/nokia/NB1" name="GPUCode/device_nokia_NB1" revision="arrow-12.0" remote="github" />
+  <project path="kernel/nokia/msm8998" name="GPUCode/android_kernel_nokia_msm8998" revision="lineage-18.1" remote="github" />
+  <project path="vendor/nokia/NB1" name="GPUCode/vendor_nokia_NB1" revision="arrow-12.0" remote="github" />
+  <project path="vendor/arrow" name="GPUCode/vendor_arrow" revision="arrow-12.0" remote="github" />
+
+  <!-- Beginning of added projects from Qualcomm (CAF) -->
+  <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy" revision="a12/gl/lineage-18.1-legacy-um" remote="githubgl"  />
+  <project path="hardware/qcom-caf/msm8998/audio" name="hardware_qcom-caf_msm8998_audio" revision="a12/gl/lineage-18.1-caf-msm8998" remote="githubgl" />
+  <project path="hardware/qcom-caf/msm8998/display" name="hardware_qcom-caf_msm8998_display" revision="gl/lineage-18.1-caf-msm8998" remote="githubgl" />
+  <project path="hardware/qcom-caf/msm8998/media" name="hardware_qcom-caf_msm8998_media" revision="lineage-18.1-caf-msm8998" remote="githubgl" />
+
+  <!-- LineageOS tools -->
+  <project path="prebuilts/tools-lineage" name="android_prebuilts_tools-lineage" revision="lineage-18.1" remote="githubgl" />
+</manifest>

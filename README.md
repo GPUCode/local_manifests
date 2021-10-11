@@ -1,54 +1,23 @@
 # Project
 
-This projects aims to create an upgradable AOSP build system for the Oneplus 5 (Cheeseburger).
-No repository from AOSP is changed: no commit over AOSP is at the moment present on these sources.
-
+This projects aims to create a manifest used for building ArrowOS for the Nokia 8 (NB1).
 All the changes are provided in separate repositories: this allows to upgrade Android with minimal effort, potentially also for future major versions.
-
 Most of the added repositories is provided by LineageOS or CAF, so thanks to them for those repos.
 
 # Build instructions
-Follow the instructions from Google to setup a machine to build Android 12:
-https://source.android.com/setup/build/initializing
 
-Then, sync all the sources:
-```
-$ repo init -u https://android.googlesource.com/platform/manifest -b android-12.0.0_r2
-$ cd .repo
-$ git clone --branch a12/gl https://github.com/roberto-sartori-gl/local_manifests.git local_manifests
-$ cd ..
-$ repo sync -c --no-clone-bundle --no-tags
-```
-then:
-```
-$ source build/envsetup.sh
-$ lunch aosp_cheeseburger-user
-$ make -j12
-```
-the images will be available in `out/target/product/cheeseburger`.
+Follow the instructions from ArrowOS to setup a machine to build Android 12.
 
-To build an OTA:
 ```
-$ source build/envsetup.sh
-$ lunch aosp_cheeseburger-user
-$ make -j12
-$ make otatools-package -j12
-$ make otapackage -j12
+mkdir arrow && cd arrow
+repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-12.0
+repo sync
 ```
-and the OTA zip will be available in `out/target/product/cheeseburger`.
 
-# Flash instructions
-The images can be flashed using fastboot:
-```
-$ fastboot flash boot out/target/product/cheeseburger/boot.img
-$ fastboot flash recovery out/target/product/cheeseburger/recovery.img
-$ fastboot flash system out/target/product/cheeseburger/system.img
-$ fastboot flash vendor out/target/product/cheeseburger/vendor.img
-```
-Format data if this is a first flash:
-```
-$ fastboot format userdata
-```
-Note that not all the fastboot versions support the 'format' command.
+Then initialize the ROM environment and build.
 
-The OTA can be flashed from the recovery (using the 'ADB sideload' feature) or using third party recoveries like TWRP.
+```
+source build/envsetup.sh
+lunch arrow_NB1-userdebug
+m otapackage
+```
