@@ -12,6 +12,10 @@
   <project path="vendor/nokia/NB1" name="GPUCode/vendor_nokia_NB1" revision="arrow-12.0" remote="github" />
   <project path="vendor/arrow" name="GPUCode/vendor_arrow" revision="arrow-12.0" remote="github" />
 
+  <!-- This is an hack to circumvent some security policies from Google: put the wlan hal from Qualcomm in hardware/qcom/wlan -->
+  <remove-project name="platform/hardware/qcom/wlan" />
+  <project path="hardware/qcom/wlan" name="hardware_qcom-caf_wlan" revision="a12/gl/lineage-18.1-caf" remote="githubgl" />
+
   <!-- Beginning of added projects from Qualcomm (CAF) -->
   <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy" revision="a12/gl/lineage-18.1-legacy-um" remote="githubgl"  />
   <project path="hardware/qcom-caf/msm8998/audio" name="hardware_qcom-caf_msm8998_audio" revision="a12/gl/lineage-18.1-caf-msm8998" remote="githubgl" />
